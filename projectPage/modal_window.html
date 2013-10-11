@@ -1,0 +1,82 @@
+	<div class="modal-dialog">
+    	<div class="modal-content">
+
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        		<h4 class="modal-title" id="myModalLabel">Search Results</h4>
+        		<p>Query</p>
+
+    			<div class="row">
+				  	<div class="col-lg-5">
+				    	<div class="input-group">
+				      		<div class="input-group-btn">
+					        	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="modal-entityType">Entity Type<span class="caret"></span></button>
+					        	<ul class="dropdown-menu">
+					          		<li><a href="#">Person</a></li>
+					          		<li><a href="#">Organization</a></li>
+					          		<li class="divider"></li>
+					         		<li><a href="#">Others</a></li>
+					        	</ul>
+				      		</div><!-- /btn-group -->
+				      	<input type="text" class="form-control" id="modal-inputArg">
+				    	</div><!-- /input-group -->
+				  	</div><!-- /.col-lg-6 -->
+				  <!-- Split button -->
+				  	<div class="col-lg-5">
+						<div class="btn-group">
+					  		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="width:1000;height:100" id="modal-relation">- - - - - Relation - - - - -<span class="caret" ></span></button>
+						  	<ul class="dropdown-menu" role="menu">
+						    	<li><a href="#">City of Birth</a></li>
+						    	<li><a href="#">Country of Birth</a></li>
+						    
+						  	</ul>
+
+							<span class="input-group-btn" style="text-align: center;">
+							      <a data-toggle="modal" class="btn btn-success" >Rel-Gle!</a>
+							</span>
+  						  	
+						</div>
+					</div>							
+				</div><!-- /.row -->
+					
+    			
+			</div>
+          	<div class="modal-body">
+            	
+
+    			<div class="container">
+        			<div id="contentBox" style="margin:0px auto; width:100%">
+
+					 <!-- columns divs, float left, no margin so there is no space between column, width=1/3 -->
+					    <div id="column-resultEntity" style="float:left; margin:0; width:20%; adding-right:20px; border-right: 1px solid #ccc;">
+					    	
+					    	<ul class="nav nav-pills nav-stacked" style="max-width: 260px;" id="result-list">
+					    		 <%for(int x = 0; x < 3; x++) {%>
+						        <li class>
+						          	<a href="#">
+						            	<span class="badge pull-right">42</span>
+						            	Home
+						          	</a>
+						        </li>
+						        <%}%>
+						    </ul>
+					    </div>
+
+					    <div id="column-resultSource" style="float:left; margin:0;width:80%;">
+					    	<div class="container">
+					    		Current time: <%= new java.util.Date() %>
+					    	</div>
+					    	
+					    </div>
+					</div>
+				</div>
+          	</div>
+      		<div class="modal-footer">
+        		<button type="button" class="btn btn-default" data-dismiss="modal" id="btn-modalClose">Close</button>
+        		<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      		</div>
+
+    	</div><!-- /.modal-content -->
+  	</div><!-- /.modal-dialog -->
+
+  	 <script src="js/myjs.js"></script>

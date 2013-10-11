@@ -4,7 +4,7 @@
     <title>Relation Extraction Engine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
   </head>
   
   <body body data-spy="scroll" data-target=".navbar">
@@ -30,7 +30,7 @@
         		<div class="collapse navbar-collapse">
         			<ul class="nav navbar-nav">
         				<li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-        				<li><a href="#Section-1"><span class="glyphicon glyphicon-star"></span> Project Description</a>
+        				<li class><a href="#Project Description"><span class="glyphicon glyphicon-star"></span> Project Description</a>
         				</li>
         			</ul>
         			<form class="navbar-form navbar-right" role="search">
@@ -47,7 +47,7 @@
         					</a>
         					<ul class="dropdown-menu">
         						<li><a href="#">Team members</a></li>
-                  				<li><a href="#">Contact Us</a></li>
+                  				<li><a href="#Contact Info">Contact Us</a></li>
                 			</ul>
         				</li>
         			</ul>
@@ -56,7 +56,6 @@
 
         </div>
     </nav>
-
 
 	<div id="myCarousel" class="carousel slide">
 		<ol class="carousel-indicators">
@@ -74,40 +73,50 @@
 							
 						</p>
 						<div class="row">
+							<form action="main.jsp" method="GET">
 						  	<div class="col-lg-6">
-						    	<div class="input-group">
-						      		<div class="input-group-btn">
-							        	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Entity Type<span class="caret"></span></button>
-							        	<ul class="dropdown-menu">
-							          		<li><a href="#">Person</a></li>
-							          		<li><a href="#">Organization</a></li>
-							          		<li class="divider"></li>
-							         		<li><a href="#">Others</a></li>
-							        	</ul>
-						      		</div><!-- /btn-group -->
-						      	<input type="text" class="form-control">
-						    	</div><!-- /input-group -->
+						  		
+							    	<div class="input-group">
+							      		<div class="input-group-btn">
+								        	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="btn-entityType">Entity Type<span class="caret"></span></button>
+								        	<ul class="dropdown-menu">
+								          		<li><a href="#">Person</a></li>
+								          		<li><a href="#">Organization</a></li>
+								          		<li class="divider"></li>
+								         		<li><a href="#">Others</a></li>
+								        	</ul>
+							      		</div><!-- /btn-group -->
+							      	<input type="text" class="form-control" id="inputArg" name="input_entity">
+							    	</div><!-- /input-group -->
+						    	
 						  	</div><!-- /.col-lg-6 -->
 						  <!-- Split button -->
-						  	<div class="col-lg-6">
-								<div class="btn-group">
-							  		<button type="button" class="btn btn-default">- - - - - Relation - - - - -</button>
-							  		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-							    		<span class="caret"></span>
-							  		</button>
+						  	<div class="col-lg-6" style="text-align: center;">
+								<div class="btn-group" style="text-align: center;">
+							  		<button type="button" class="btn btn-default btn-relation dropdown-toggle" data-toggle="dropdown" style="width:1000;height:100" id="btn-relation">- - - - - Relation - - - - -<span class="caret"></span></button>
 								  	<ul class="dropdown-menu" role="menu">
 								    	<li><a href="#">City of Birth</a></li>
 								    	<li><a href="#">Country of Birth</a></li>
 								    
 								  	</ul>
-								  	<span class="input-group-btn">
-	        							<button class="btn btn-success" type="button">Rel-Gle!</button>
-	      						  	</span>
+								  	<!-- <span class="input-group-btn">
+	        							<button id="btnRelgle" class="btn btn-success btn-large" type="button">Rel-Gle!</button>
+	      						  	</span> -->
+
+									<span class="input-group-btn" style="text-align: center;">
+									      <a type="submit" data-toggle="modal" href="#myModal" class="btn btn-success" id="btn-relGel"> Rel-Gle! </a>
+									</span>
+
 								</div>
 							</div>
-							
+							<div class="col-lg-6">
+							</div>
+							</form>
 						</div><!-- /.row -->
 						<p>
+							<br>
+							<br>
+							<br>
 							<br>
 							<br>
 							<br>
@@ -124,7 +133,7 @@
             		<div class="carousel-caption">
               			<h1 style="font-size:55px;">Statistical Relation Learning</h1>
               			<p class="lead" style="font-size:25px;">Recently, both the ILP community and the statistical ML community have begun to incorporate aspects of the complementary technology. Many ILP researchers are developing stochastic and probabilistic representations and algorithms</p>
-              			<a class="btn btn-large btn-primary" href="#Section-1">Learn More</a>
+              			<a class="btn btn-large btn-primary btn-lg" href="#Project Description">Learn More</a>
               			<p>
 							<br>
 							<br>
@@ -141,23 +150,106 @@
 	    <a class="right carousel-control" href="#myCarousel" data-slide="next">
 	    	<span class="glyphicon glyphicon-chevron-right"></span>
 	    </a>
+
 	</div>
 
 
-	<div class="container marketing" id="Section-1">
+	<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+	    	<div class="modal-content">
+
+	      		<div class="modal-header">
+	        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+	        		<h4 class="modal-title" id="myModalLabel">Search Results</h4>
+	        		<p>Query</p>
+
+	    			<div class="row">
+					  	<div class="col-lg-5">
+					    	<div class="input-group">
+					      		<div class="input-group-btn">
+						        	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="modal-entityType">Entity Type<span class="caret"></span></button>
+						        	<ul class="dropdown-menu">
+						          		<li><a href="#">Person</a></li>
+						          		<li><a href="#">Organization</a></li>
+						          		<li class="divider"></li>
+						         		<li><a href="#">Others</a></li>
+						        	</ul>
+					      		</div><!-- /btn-group -->
+					      	<input type="text" class="form-control" id="modal-inputArg">
+					    	</div><!-- /input-group -->
+					  	</div><!-- /.col-lg-6 -->
+					  <!-- Split button -->
+					  	<div class="col-lg-5">
+							<div class="btn-group">
+						  		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="width:1000;height:100" id="modal-relation">- - - - - Relation - - - - -<span class="caret" ></span></button>
+							  	<ul class="dropdown-menu" role="menu">
+							    	<li><a href="#">City of Birth</a></li>
+							    	<li><a href="#">Country of Birth</a></li>
+							    
+							  	</ul>
+
+								<span class="input-group-btn" style="text-align: center;">
+								      <a data-toggle="modal" class="btn btn-success" >Rel-Gle!</a>
+								</span>
+	  						  	
+							</div>
+						</div>							
+					</div><!-- /.row -->
+						
+	    			
+				</div>
+	          	<div class="modal-body">
+	            	
+
+	    			<div class="container">
+	        			<div id="contentBox" style="margin:0px auto; width:100%">
+
+						 <!-- columns divs, float left, no margin so there is no space between column, width=1/3 -->
+						    <div id="column-resultEntity" style="float:left; margin:0; width:25%; adding-right:20px; border-right: 1px solid #ccc;">
+						    	
+						    	<ul class="nav nav-pills nav-stacked scroll" style="max-width: 260px; overflow:auto; height:350px;" id="result-list">
+						    	   
+							    </ul>
+						    </div>
+
+						    <div id="column-resultSource" style="float:left; margin:0;width:75%;">
+						    	<div class="container" id="modal-doc">
+						    		
+						    	</div>
+						    	
+						    </div>
+						</div>
+					</div>
+	          	</div>
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-default" data-dismiss="modal" id="btn-modalClose">Close</button>
+	        		<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+	      		</div>
+
+	    	</div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	</div>
+	
+
+	<div class="container marketing" id="Project Description">
+		<hr class="featurette-divider">
+	</div>
+
+	<div class="container marketing">
 
       
       <!-- START THE FEATURETTES -->
-
+      <h1 align="center">Project Description.</h1>
       <hr class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Problem Description.</h2>
+          <h3><span class="text-muted">Statistical Relation Learning</span><h3>
+          <p class="lead">is a subdiscipline of artificial intelligence and machine learning that is concerned with models of domains that exhibit both uncertainty (which can be dealt with using statistical methods) and complex, relational structure.</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="img/platemodel.jpeg" alt="500x500">
+          <img class="featurette-image img-responsive" src="img/SRL-book.jpg" alt="500x500">
         </div>
       </div>
 
@@ -186,12 +278,27 @@
       </div>
 
       <hr class="featurette-divider">
-
       <!-- /END THE FEATURETTES -->
 
 
       <!-- FOOTER -->
-      <footer>
+      <footer id="Contact Info">
+      	<div class="row">
+      		<div class="row featurette">
+	            <div class="col-md-7">
+	                <a href="http://vlis.isri.cmu.edu/">
+	                	<img src="img/vlislogo.png" alt="CMU-VLIS-logo">
+	                </a>
+	                <a href="http://www.ml.cmu.edu/">
+	                	<img src="img/mldlogo.jpg" alt="CMU-MLD-logo">
+	                </a>
+	            </div>
+	            <div class="col-md-5">
+	                <p>This is a Capstone Project</p>
+	                <p>This is part of the SchNell Project</p>
+	            </div>
+	        </div>
+        </div>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p> 2013 CMU-MLD/VLIS Guanyu Wang</p>
       </footer>
@@ -201,5 +308,7 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/myjs.js"></script>
+   
   </body>
 </html>

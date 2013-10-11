@@ -5731,7 +5731,7 @@ body.modal-open,
   .modal-dialog {
     right: auto;
     left: 50%;
-    width: 600px;
+    width: 1000px;
     padding-top: 30px;
     padding-bottom: 30px;
   }
@@ -6802,4 +6802,9 @@ td.visible-print {
   td.hidden-print {
     display: none !important;
   }
+}
+
+
+.mycontent-left {
+  border-right: 1px dashed #333;
 }
